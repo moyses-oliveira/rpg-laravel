@@ -1,0 +1,134 @@
+{
+  "classes_nivel_1": [
+    {
+      "nome": "Guerreiro (Tático)",
+      "atributo_principal": "FOR",
+      "atributos": {
+        "FOR": 6,
+        "DES": 4,
+        "CON": 4,
+        "INT": 3,
+        "SAB": 2,
+        "CAR": 2
+      },
+      "soma_total": 21
+    },
+    {
+      "nome": "Ladino (Ágil)",
+      "atributo_principal": "DES",
+      "atributos": {
+        "FOR": 2,
+        "DES": 6,
+        "CON": 3,
+        "INT": 4,
+        "SAB": 2,
+        "CAR": 4
+      },
+      "soma_total": 21
+    },
+    {
+      "nome": "Bárbaro (Brutal)",
+      "atributo_principal": "CON",
+      "atributos": {
+        "FOR": 6,
+        "DES": 3,
+        "CON": 6,
+        "INT": 2,
+        "SAB": 2,
+        "CAR": 2
+      },
+      "soma_total": 21
+    },
+    {
+      "nome": "Mago (Erudito)",
+      "atributo_principal": "INT",
+      "atributos": {
+        "FOR": 2,
+        "DES": 3,
+        "CON": 3,
+        "INT": 6,
+        "SAB": 4,
+        "CAR": 3
+      },
+      "soma_total": 21
+    },
+    {
+      "nome": "Clérigo (Devoto)",
+      "atributo_principal": "SAB",
+      "atributos": {
+        "FOR": 3,
+        "DES": 2,
+        "CON": 4,
+        "INT": 2,
+        "SAB": 6,
+        "CAR": 4
+      },
+      "soma_total": 21
+    },
+    {
+      "nome": "Bardo (Performático)",
+      "atributo_principal": "CAR",
+      "atributos": {
+        "FOR": 2,
+        "DES": 4,
+        "CON": 3,
+        "INT": 3,
+        "SAB": 3,
+        "CAR": 6
+      },
+      "soma_total": 21
+    },
+    {
+      "nome": "Monge (Focado)",
+      "atributo_principal": "DES",
+      "atributos": {
+        "FOR": 3,
+        "DES": 6,
+        "CON": 4,
+        "INT": 2,
+        "SAB": 4,
+        "CAR": 2
+      },
+      "soma_total": 21
+    },
+    {
+      "nome": "Patrulheiro (Sobrevivência)",
+      "atributo_principal": "SAB",
+      "atributos": {
+        "FOR": 4,
+        "DES": 5,
+        "CON": 3,
+        "INT": 2,
+        "SAB": 6,
+        "CAR": 2
+      },
+      "soma_total": 21
+    },
+    {
+      "nome": "Feiticeiro (Inato)",
+      "atributo_principal": "CAR",
+      "atributos": {
+        "FOR": 2,
+        "DES": 3,
+        "CON": 4,
+        "INT": 3,
+        "SAB": 3,
+        "CAR": 6
+      },
+      "soma_total": 21
+    },
+    {
+      "nome": "Paladino (Votado)",
+      "atributo_principal": "FOR",
+      "atributos": {
+        "FOR": 6,
+        "DES": 2,
+        "CON": 4,
+        "INT": 2,
+        "SAB": 3,
+        "CAR": 4
+      },
+      "soma_total": 21
+    }
+  ]
+}
