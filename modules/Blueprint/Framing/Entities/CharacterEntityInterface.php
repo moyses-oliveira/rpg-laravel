@@ -1,7 +1,7 @@
 <?php
 namespace Modules\Blueprint\Framing\Entities;
 
-use App\Blueprint\Framing\Sets\ProgressionSetInterface;
+use Modules\Blueprint\Framing\Sets\ProgressionSetInterface;
 
 interface CharacterEntityInterface
 {

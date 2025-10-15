@@ -2,7 +2,7 @@
 
 namespace Modules\Blueprint\Framing\Stats;
 
-use App\Blueprint\Skills\AbstractSkill;
+use Modules\Blueprint\Skills\AbstractSkill;
 
 class SkillEntityStats
 {

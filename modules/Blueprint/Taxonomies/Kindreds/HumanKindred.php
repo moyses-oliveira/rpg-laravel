@@ -2,8 +2,8 @@
 
 namespace Modules\Blueprint\Taxonomies\Kindreds;
 
-use App\Blueprint\Framing\Entities\AdvancedEntityInterface;
-use App\Blueprint\Framing\Sets\ConditionSet;
+use Modules\Blueprint\Framing\Entities\AdvancedEntityInterface;
+use Modules\Blueprint\Framing\Sets\ConditionSet;
 
 class HumanKindred extends ConditionSet
 {

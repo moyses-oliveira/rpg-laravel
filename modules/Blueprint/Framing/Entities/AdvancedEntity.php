@@ -1,11 +1,11 @@
 <?php
 namespace Modules\Blueprint\Framing\Entities;
 
-use App\Blueprint\Framing\Sets\CompositionSetInterface;
-use App\Blueprint\Framing\Sets\ConditionSetInterface;
-use App\Blueprint\Framing\Stats\AdvancedEntityAttributesStats;
-use App\Blueprint\Framing\Stats\HPEntityAttributesStats;
-use App\Blueprint\Framing\Stats\SkillEntityStats;
+use Modules\Blueprint\Framing\Sets\CompositionSetInterface;
+use Modules\Blueprint\Framing\Sets\ConditionSetInterface;
+use Modules\Blueprint\Framing\Stats\AdvancedEntityAttributesStats;
+use Modules\Blueprint\Framing\Stats\HPEntityAttributesStats;
+use Modules\Blueprint\Framing\Stats\SkillEntityStats;
 
 class AdvancedEntity implements AdvancedEntityInterface, HardEntityInterface
 {

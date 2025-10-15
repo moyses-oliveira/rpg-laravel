@@ -1,7 +1,7 @@
 <?php
 namespace Modules\Blueprint\Framing\Entities;
 
-use App\Blueprint\Framing\Stats\AdvancedEntityAttributesStats;
+use Modules\Blueprint\Framing\Stats\AdvancedEntityAttributesStats;
 
 interface AdvancedEntityInterface
 {

@@ -2,7 +2,7 @@
 
 namespace Modules\Blueprint\Framing\Sets;
 
-use App\Blueprint\Framing\Entities\AdvancedEntityInterface;
+use Modules\Blueprint\Framing\Entities\AdvancedEntityInterface;
 
 interface EntitySetInterface
 {

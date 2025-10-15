@@ -2,7 +2,7 @@
 
 namespace Modules\Blueprint\Framing\Entities;
 
-use App\Blueprint\Framing\Stats\HPEntityAttributesStats;
+use Modules\Blueprint\Framing\Stats\HPEntityAttributesStats;
 
 class HardEntity implements HardEntityInterface
 {
