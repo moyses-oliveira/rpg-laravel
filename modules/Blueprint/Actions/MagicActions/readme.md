@@ -1,0 +1,2 @@
+ - Ações de conjuração ou uso de poderes de natureza mágica/sobrenatural.
+ - Conjurar Magia, Dissipar Efeito Mágico, Canalizar Poder, Foco Místico.

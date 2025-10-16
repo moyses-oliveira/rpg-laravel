@@ -1,0 +1,2 @@
+ - Ações que consomem um instante e resolvem uma única tarefa não-social (Objetos, Ambiente).
+ - Inspecionar Objeto, Teste de Percepção Rápida

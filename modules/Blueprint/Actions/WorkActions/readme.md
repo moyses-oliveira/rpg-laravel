@@ -1,0 +1,2 @@
+ - Ações que exigem ciclos de tempo longos (minutos, horas, dias) e podem ser interrompidas.
+ - Forjar Item, Reparo de Equipamento, Treinamento de Habilidade, Pesquisa em Arquivos, Preparar Ritual.

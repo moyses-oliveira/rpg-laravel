@@ -1,0 +1,2 @@
+ - Ações que não são executadas ativamente pelo jogador, mas são acionadas automaticamente por um evento (Efeitos Passivos).
+ - Reação Rápida, Contra-Ataque (ao ser atacado), Queda (ao ser empurrado), Defesa Automática.

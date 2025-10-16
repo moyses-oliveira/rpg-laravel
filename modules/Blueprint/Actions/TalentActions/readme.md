@@ -1,0 +1,2 @@
+ - Ações únicas baseadas em talentos, classes ou feats específicos (não mágicos).
+ - Golpes de Guerreiro (exclusivos), Habilidade de Ladrão (exclusiva), Grito de Batalha.

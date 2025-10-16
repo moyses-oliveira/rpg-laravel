@@ -1,0 +1,4 @@
+ - Desafio da lista de Pericias
+ - Pode ser impossível dependendo da habilidade dividida em HardSkills / CommonSkills
+ - HardSkills > usar magia muito treinamento poucos conseguem
+ - CommonSkills > Cozinhar, apesar de nunca ter cosinhado fas parte do cotidiano

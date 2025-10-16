@@ -10,9 +10,9 @@ use Modules\Blueprint\Framing\Stats\SkillEntityStats;
 class AdvancedEntity implements AdvancedEntityInterface, HardEntityInterface
 {
     private AdvancedEntityAttributesStats $attributes;
-    private HPEntityAttributesStats $hp;
+    private HPEntityAttributesStats $_hp;
 
-    private SkillEntityStats $skills;
+    private SkillEntityStats $_skills;
 
     /** @var CompositionSetInterface[]  */
     private array $compositionSetCollection = [];
@@ -24,14 +24,18 @@ class AdvancedEntity implements AdvancedEntityInterface, HardEntityInterface
     public function __construct()
     {
         $this->attributes = new AdvancedEntityAttributesStats();
-        $this->hp = new HPEntityAttributesStats();
+        $this->_hp = new HPEntityAttributesStats();
     }
 
-    public function getHp(): HPEntityAttributesStats
+    public function hp(): HPEntityAttributesStats
     {
-        return $this->hp;
+        return $this->_hp;
     }
 
+    public function skills(): SkillEntityStats
+    {
+        return $this->_skills;
+    }
 
     public function atr(): AdvancedEntityAttributesStats
     {

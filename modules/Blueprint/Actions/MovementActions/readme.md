@@ -1,0 +1,2 @@
+ - Ações que consomem tempo/recursos em uma rodada de combate (Dano, Controle, Posição).
+ - Correr, Retirar-se, Fuga Tática, Montar/Desmontar, Deslocamento Rápido.

@@ -6,5 +6,5 @@ use Modules\Blueprint\Framing\Stats\HPEntityAttributesStats;
 interface HardEntityInterface
 {
 
-    public function getHp():HPEntityAttributesStats;
+    public function hp():HPEntityAttributesStats;
 }

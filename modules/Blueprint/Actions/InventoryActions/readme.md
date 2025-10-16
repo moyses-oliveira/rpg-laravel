@@ -1,0 +1,2 @@
+ - Ações de gerenciamento de equipamento durante o jogo (sacar, guardar, equipar).
+ - Equipar Escudo, Sacar Arma, Guardar Objeto, Trocar Munição, Organizar Mochila (no downtime).

@@ -1,0 +1,2 @@
+ - Ações focadas em diplomacia, influência, ou interação complexa com NPCs.
+ - Persuadir, Intimidar, Enganar (Blefe), Negociar, Fazer Discurso Público

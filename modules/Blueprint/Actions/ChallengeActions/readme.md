@@ -1,0 +1,2 @@
+ - Desafio que envolve consequencias ao falhar e não estão relacionadas a combate nem estão na lista de Perícias
+ - Saltar um penhasco, Alcançar um veículo em movimento, Encontrar objeto, Ler um manuscrito de um idioma não conhecido

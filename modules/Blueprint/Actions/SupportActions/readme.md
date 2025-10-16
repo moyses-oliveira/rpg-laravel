@@ -1,0 +1,2 @@
+ - Ações focadas em aplicar buffs, debuffs, cura ou auxílio direto a aliados ou inimigos.
+ - Curar Ferimento Leve, Proteger Aliado, Lançar Maldição (Debuff), Dar Cobertura.
