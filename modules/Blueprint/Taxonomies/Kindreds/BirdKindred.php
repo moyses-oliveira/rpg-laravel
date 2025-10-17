@@ -10,8 +10,10 @@ class BirdKindred extends CompositionSet
 
     public function modify(AdvancedEntityInterface $entity):void
     {
-        $entity->atr()->modStrength(-3);
-        $entity->atr()->modDexterity(+3);
-        #$entity->skills()->add(Fly);
+        $entity->atr()
+            ->modStrength(-3);
+//        $entity->atr()->modDexterity(+3);
+//        $entity->skills()->add(FlyNaturallySkill::ALIAS);
+        #$entity->skills()->add(FlyNaturallySkill);
     }
 }

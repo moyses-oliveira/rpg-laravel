@@ -5,14 +5,13 @@ namespace Modules\Blueprint\Taxonomies\Kindreds;
 use Modules\Blueprint\Framing\Entities\AdvancedEntityInterface;
 use Modules\Blueprint\Framing\Sets\CompositionSet;
 
-class ElvesKindred extends CompositionSet
+class OrcsKindred extends CompositionSet
 {
 
     public function modify(AdvancedEntityInterface $entity):void
     {
         $entity->atr()
-            ->modWisdom(1)
-            ->modStrength(-1);
-//        $entity->skills()->add(DetectPoisonBonus::Alias);
+            ->modConstitution(1)
+            ->modIntelligence(-1);
     }
 }

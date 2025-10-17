@@ -9,13 +9,10 @@ class SkillEntityStats
     /** @var AbstractSkill[]   */
     private array $collection = [];
 
-    public function add(AbstractSkill $skill): array
+    public function add(string $skill): self
     {
-        return $this->collection[] = $skill;
+        $this->collection[] = $skill;
+        return $this;
     }
 
-    public function hasSkill()
-    {
-
-    }
 }

@@ -51,33 +51,39 @@ class AdvancedEntityAttributesStats
         return $this->wisdom;
     }
 
-    public function modDexterity(int $value): void
+    public function modDexterity(int $value): self
     {
         $this->dexterity += $value;
+        return $this;
     }
 
-    public function modStrength(int $value): void
+    public function modStrength(int $value): self
     {
         $this->strength += $value;
+        return $this;
     }
 
-    public function modConstitution(int $value): void
+    public function modConstitution(int $value): self
     {
         $this->constitution += $value;
+        return $this;
     }
 
-    public function modIntelligence(int $value): void
+    public function modIntelligence(int $value): self
     {
         $this->intelligence += $value;
+        return $this;
     }
 
-    public function modCharisma(int $value): void
+    public function modCharisma(int $value): self
     {
         $this->charisma += $value;
+        return $this;
     }
 
-    public function modWisdom(int $value): void
+    public function modWisdom(int $value): self
     {
         $this->wisdom += $value;
+        return $this;
     }
 }
