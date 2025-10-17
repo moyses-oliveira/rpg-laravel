@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background: #222;
+    color: #ddd;
+    font-family: Inter, Arial
+}
+
+#app {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-direction: column
+}
+
+#canvas-wrapper {
+    width: 800px;
+    height: 800px;
+    flex: 1
+}
+
+.controls {
+    padding: 8px;
+    background: #111;
+    border-top: 1px solid #333;
+    display: flex;
+    gap: 12px;
+    align-items: center
+}
+
+.hint {
+    opacity: .8;
+    font-size: 13px
+}
+
+button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #1e1e1e;
+    color: #eee
+}
