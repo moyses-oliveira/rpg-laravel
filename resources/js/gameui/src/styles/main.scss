@@ -1,0 +1,117 @@
+body {
+    background-color: #0b0f14;
+}
+
+.bg-panel {
+    background-color: #111821 !important;
+}
+
+.ciano {
+    color: #00ffff !important;
+}
+
+.hp-bar {
+    height: 6px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #ff4d4d, #ff0000);
+}
+
+.mana-bar {
+    height: 6px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #00ffff, #0077ff);
+}
+
+.dados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.dado {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #00ffff20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #00ffff60;
+    color: #00ffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dado:hover {
+    background-color: #00ffff40;
+}
+
+.attribute-tag {
+    display: flex;
+    align-items: center;
+    color: #00ffff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    background-color: #00ffff12;
+    border: 1px solid #00ffff33;
+    border-radius: 6px;
+    padding: 5px 10px 7px 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: all 0.25s ease;
+    span:first-child {
+        margin-right: 7px;
+    }
+    &.justified {
+        span:first-child {
+            margin-right: 0px;
+        }
+        span:nth-child(2) {
+            font-size: 0.75em;
+        }
+        justify-content: space-between;
+        text-align: justify;
+    }
+    &.inline {
+        width: auto;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-size: 200% 100%;
+        animation: shimmer 5s infinite linear;
+        pointer-events: none;
+    }
+
+    &:hover {
+        background-color: #00ffff25;
+        border-color: #00ffff80;
+        box-shadow: 0 0 8px #00ffff55;
+    }
+}
+
+.attribute-block {
+    .attribute-tag {
+        font-size: 1.3rem;
+    }
+}
+
+/* shimmer animation * /
+@keyframes shimmer {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}
+
+ */
