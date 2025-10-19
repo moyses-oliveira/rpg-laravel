@@ -2,8 +2,8 @@
 
 <template>
   <div>
-    <div class="attribute-tag ps-5 pe-5" :class="subclass" v-tooltip:top="label">
-      <span><v-icon size="16" class="me-1">{{ icon }}</v-icon></span>
+    <div class="attribute-tag" :class="subclass" v-tooltip:top="label">
+      <span><v-icon :size="iconSize" class="me-1">{{ icon }}</v-icon></span>
       <span>{{ value }}</span>
     </div>
   </div>
@@ -22,6 +22,10 @@ const props = defineProps({
   value: {
     type: [String, Number],
     required: true,
+  },
+  iconSize: {
+    type: [Number],
+    default: 16
   },
   subclass: {
     type: [String],

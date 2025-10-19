@@ -28,12 +28,12 @@
           <v-icon size="16" class="me-1">mdi-sword-cross</v-icon>Atributos
         </div>
         <v-row dense>
-          <attribute-badge class="v-col v-col-4 py-1" subclass="justified" value="7" label="Destreza" icon="mdi-run"/>
-          <attribute-badge class="v-col v-col-4 py-1" subclass="justified" value="5" label="Força" icon="mdi-arm-flex"/>
-          <attribute-badge class="v-col v-col-4 py-1" subclass="justified" value="6" label="Constituição" icon="mdi-heart"/>
-          <attribute-badge class="v-col v-col-4 py-1" subclass="justified" value="8" label="Inteligência" icon="mdi-head-snowflake-outline"/>
-          <attribute-badge class="v-col v-col-4 py-1" subclass="justified" value="4" label="Sabedoria" icon="mdi-school"/>
-          <attribute-badge class="v-col v-col-4 py-1" subclass="justified" value="3" label="Carisma" icon="mdi-music-note"/>
+          <attribute-badge class="v-col v-col-4 py-1" icon-size="20" value="7" label="Destreza" icon="mdi-run"/>
+          <attribute-badge class="v-col v-col-4 py-1" icon-size="20" value="5" label="Força" icon="mdi-arm-flex"/>
+          <attribute-badge class="v-col v-col-4 py-1" icon-size="20" value="6" label="Constituição" icon="mdi-heart"/>
+          <attribute-badge class="v-col v-col-4 py-1" icon-size="20" value="8" label="Inteligência" icon="mdi-head-snowflake-outline"/>
+          <attribute-badge class="v-col v-col-4 py-1" icon-size="20" value="4" label="Sabedoria" icon="mdi-school"/>
+          <attribute-badge class="v-col v-col-4 py-1" icon-size="20" value="3" label="Carisma" icon="mdi-music-note"/>
         </v-row>
         <div class="mt-2">
           <div class="text-caption">HP</div>
