@@ -1,9 +1,9 @@
 <template>
-  <v-container fluid class="pa-0" style="height: calc(100vh - 100px);">
+  <v-container fluid class="pa-0 player-board">
     <v-row no-gutters style="height: 100%;">
 
       <v-col cols="3" class="bg-panel pa-2">
-        <character-info-panel />
+        <left-board-panel/>
       </v-col>
 
       <!-- Centro (Mapa de batalha) -->
@@ -26,43 +26,29 @@
 
       <!-- Painel Direito (Jogadores + Dados) -->
       <v-col cols="3" class="bg-panel pa-2 d-flex flex-column justify-space-between">
-        <!-- Jogadores -->
-        <div>
-          <v-card
-            v-for="player in players"
-            :key="player.name"
-            flat
-            class="mb-2 pa-2 bg-panel"
-          >
-            <v-row align="center">
-              <v-col cols="3">
-                <v-avatar size="48">
-                  <img :src="player.avatar" alt="avatar" />
-                </v-avatar>
-              </v-col>
-              <v-col cols="9">
-                <div class="text-body-2 ciano">{{ player.name }}</div>
-                <div class="hp-bar" :style="{ width: player.hp + '%' }"></div>
-                <div class="mana-bar mt-1" :style="{ width: player.mana + '%' }"></div>
-              </v-col>
-            </v-row>
-          </v-card>
-        </div>
-
-        <!-- Dados -->
-        <div class="dados mt-2">
-          <div v-for="d in ['D4','D6','D8','D10','D12','D20']" :key="d" class="dado">
-            {{ d }}
-          </div>
-        </div>
+        <character-info-panel />
       </v-col>
     </v-row>
   </v-container>
+
+  <v-footer
+    color="#0f1822"
+    app
+    class="d-flex justify-center"
+    height="60"
+  >
+    <v-btn icon color="cyan" variant="text"><v-icon>mdi-sword</v-icon></v-btn>
+    <v-btn icon color="cyan" variant="text"><v-icon>mdi-shield</v-icon></v-btn>
+    <v-btn icon color="cyan" variant="text"><v-icon>mdi-lightning-bolt</v-icon></v-btn>
+    <v-btn icon color="cyan" variant="text"><v-icon>mdi-chat</v-icon></v-btn>
+    <v-btn icon color="cyan" variant="text"><v-icon>mdi-dice-multiple</v-icon></v-btn>
+  </v-footer>
 </template>
 
 <script setup>
-
 import CharacterInfoPanel from "@/modules/board/components/CharacterInfoPanel.vue";
+import LeftBoardPanel from "@/modules/board/components/LeftBoardPanel.vue";
+
 </script>
 
 <style scoped lang="sass">
