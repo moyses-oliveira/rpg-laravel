@@ -13,9 +13,9 @@
       </v-btn>
     </v-app-bar>
 
-    <v-main>
+    <div class="v-main board-container">
       <router-view />
-    </v-main>
+    </div>
 
   </v-app>
 </template>

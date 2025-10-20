@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <div class="attribute-tag" :class="subclass" v-tooltip:top="label">
+    <div class="attribute-tag highlight" :class="subclass" v-tooltip:top="label">
       <span><v-icon :size="iconSize" class="me-1">{{ icon }}</v-icon></span>
       <span>{{ value }}</span>
     </div>

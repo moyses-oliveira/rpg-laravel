@@ -1,13 +1,13 @@
 <template>
 
-  <v-card flat class="bg-panel pa-3 character">
+  <v-card flat class="bg-panel pa-0 character">
     <v-card-title class="ciano text-h6 d-flex align-center">
       <v-icon class="me-2">mdi-account-details</v-icon>
       Ficha de Personagem
     </v-card-title>
     <v-divider></v-divider>
 
-    <v-card-text class="text-body-2 pa-0">
+    <v-card-text class="text-body-2 pt-1 pb-1 pe-2 ps-2 side-panel-card-body">
       <!-- BLOCO 1: INFORMAÇÕES -->
       <v-sheet class="pa-2 mt-2 info-group" rounded="lg" border>
         <div class="info-group-title">
@@ -32,18 +32,31 @@
           <v-icon size="16" class="me-1">mdi-sword-cross</v-icon>
           Atributos
         </div>
-        <div class="me-6 ms-6">
+        <div class="ma-1">
           <v-row dense>
-            <attribute-badge class="v-col v-col-4 py-1" :icon-size="20" value="7" label="Destreza" icon="mdi-run"/>
-            <attribute-badge class="v-col v-col-4 py-1" :icon-size="20" value="5" label="Força" icon="mdi-arm-flex"/>
-            <attribute-badge class="v-col v-col-4 py-1" :icon-size="20" value="6" label="Constituição" icon="mdi-heart"/>
-            <attribute-badge class="v-col v-col-4 py-1" :icon-size="20" value="8" label="Inteligência"
-                             icon="mdi-head-snowflake-outline"/>
-            <attribute-badge class="v-col v-col-4 py-1" :icon-size="20" value="4" label="Sabedoria" icon="mdi-school"/>
-            <attribute-badge class="v-col v-col-4 py-1" :icon-size="20" value="3" label="Carisma" icon="mdi-music-note"/>
+            <v-col cols="4" class="pe-4 ps-4 pb-1 pt-0">
+              <attribute-badge :icon-size="20" value="7" label="Destreza" icon="mdi-run"/>
+            </v-col>
+            <v-col cols="4" class="pe-4 ps-4 pb-1 pt-0">
+              <attribute-badge :icon-size="20" value="5" label="Força" icon="mdi-arm-flex"/>
+            </v-col>
+            <v-col cols="4" class="pe-4 ps-4 pb-1 pt-0">
+              <attribute-badge :icon-size="20" value="6" label="Constituição" icon="mdi-heart"/>
+            </v-col>
+            <v-col cols="4" class="pe-4 ps-4 pb-0 pt-0">
+              <attribute-badge :icon-size="20" value="8" label="Inteligência"
+                               icon="mdi-head-snowflake-outline"/>
+            </v-col>
+            <v-col cols="4" class="pe-4 ps-4 pb-0 pt-0">
+              <attribute-badge :icon-size="20" value="4" label="Sabedoria" icon="mdi-school"/>
+            </v-col>
+            <v-col cols="4" class="pe-4 ps-4 pb-0 pt-0">
+              <attribute-badge :icon-size="20" value="3" label="Carisma" icon="mdi-music-note"/>
+            </v-col>
+
           </v-row>
         </div>
-        <div class="me-6 ms-6 mt-2 mb-4">
+        <div class="ma-1 mt-3 mb-3">
           <div class="text-caption">HP</div>
           <v-progress-linear color="red-darken-2" height="6" rounded model-value="80"/>
           <div class="text-caption mt-1">Mana</div>
@@ -59,9 +72,9 @@
         </div>
         <div class="me-1 ms-1 mb-2">
           <div class="d-flex flex-wrap gap-2">
-            <div class="attribute-tag">Forma Selvagem</div>
-            <div class="attribute-tag">Rajada de Vento</div>
-            <div class="attribute-tag">Chamado da Floresta</div>
+            <div class="attribute-tag highlight mb-1">Forma Selvagem</div>
+            <div class="attribute-tag highlight mb-1">Rajada de Vento</div>
+            <div class="attribute-tag highlight mb-1">Chamado da Floresta</div>
           </div>
         </div>
       </v-sheet>
@@ -73,11 +86,11 @@
           Equipamentos
         </div>
         <div class="me-1 ms-1 mb-2">
-        <div class="d-flex flex-wrap gap-2">
-          <div class="attribute-tag">Bastão Druídico</div>
-          <div class="attribute-tag">Amuleto da Lua</div>
-          <div class="attribute-tag">Poções de Cura (3)</div>
-        </div>
+          <div class="d-flex flex-wrap gap-2">
+            <div class="attribute-tag highlight mb-1">Bastão Druídico</div>
+            <div class="attribute-tag highlight mb-1">Amuleto da Lua</div>
+            <div class="attribute-tag highlight mb-1">Poções de Cura (3)</div>
+          </div>
         </div>
       </v-sheet>
     </v-card-text>

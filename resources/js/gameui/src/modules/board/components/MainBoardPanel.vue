@@ -6,7 +6,7 @@
     </v-card-title>
     <v-divider></v-divider>
 
-    <v-card-text class="text-body-2 pa-0">
+    <v-card-text class="text-body-2 pa-0 side-panel-card-body">
       <!-- Jogadores -->
       <div v-for="player in players" :key="player.id" class="jogador">
         <character-summary :player="player" />

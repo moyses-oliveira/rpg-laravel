@@ -2,8 +2,8 @@
   <v-container fluid class="pa-0 player-board">
     <v-row no-gutters style="height: 100%;">
 
-      <v-col cols="3" class="bg-panel pa-2">
-        <left-board-panel/>
+      <v-col cols="3" class="side-panel bg-panel pa-2">
+        <main-board-panel/>
       </v-col>
 
       <!-- Centro (Mapa de batalha) -->
@@ -25,7 +25,7 @@
       </v-col>
 
       <!-- Painel Direito (Jogadores + Dados) -->
-      <v-col cols="3" class="bg-panel pa-2 d-flex flex-column justify-space-between">
+      <v-col cols="3" class="side-panel bg-panel pa-2 d-flex flex-column justify-space-between">
         <character-info-panel />
       </v-col>
     </v-row>
@@ -47,7 +47,7 @@
 
 <script setup>
 import CharacterInfoPanel from "@/modules/board/components/CharacterInfoPanel.vue";
-import LeftBoardPanel from "@/modules/board/components/LeftBoardPanel.vue";
+import MainBoardPanel from "@/modules/board/components/MainBoardPanel.vue";
 
 </script>
 
