@@ -38,7 +38,7 @@ export const collection = [
     "race": "Elf",
     "hp": 70,
     "mana": 65,
-    "avatar": "https://i.pravatar.cc/50?img=65",
+    "avatar": "https://i.pravatar.cc/50?img=44",
     "level": 12,
     "attributes": {
       "dexterity": 10,
@@ -70,7 +70,7 @@ export const collection = [
     "race": "Elf",
     "hp": 85,
     "mana": 60,
-    "avatar": "https://i.pravatar.cc/50?img=65",
+    "avatar": "https://i.pravatar.cc/50?img=64",
     "level": 8,
     "attributes": {
       "dexterity": 16,
@@ -92,7 +92,7 @@ export const collection = [
     ],
     "user": {
       "name": "Alishon Ahmad",
-      "avatar": "https://i.pravatar.cc/50?img=65"
+      "avatar": "https://i.pravatar.cc/50?img=64"
     }
   },
   {
@@ -100,7 +100,7 @@ export const collection = [
     "name": "Silver Crusader",
     "cls": "Paladin",
     "race": "Dwarf",
-    "hp": 110,
+    "hp": 100,
     "mana": 80,
     "avatar": "https://i.pravatar.cc/50?img=68",
     "level": 15,
@@ -134,7 +134,7 @@ export const collection = [
     "race": "Halfling",
     "hp": 75,
     "mana": 40,
-    "avatar": "https://i.pravatar.cc/50?img=70",
+    "avatar": "https://i.pravatar.cc/50?img=46",
     "level": 9,
     "attributes": {
       "dexterity": 17,
@@ -156,7 +156,7 @@ export const collection = [
     ],
     "user": {
       "name": "Five Tails Lopsided",
-      "avatar": "https://i.pravatar.cc/50?img=70"
+      "avatar": "https://i.pravatar.cc/50?img=71"
     }
   }
 ]
