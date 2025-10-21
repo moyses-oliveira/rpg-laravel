@@ -1,3 +1,7 @@
+:root {
+    --divisor-border-color: #00ffff40;
+    --ciano-color: #00ffff;
+}
 body {
     background-color: #0b0f14;
 }
@@ -8,15 +12,29 @@ body {
 }
 
 .hp-bar {
+    span {
+        display: block;
+        height: 6px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, #ff4d4d, #ff0000);
+    }
+    width: 100%;
     height: 6px;
-    border-radius: 4px;
-    background: linear-gradient(90deg, #ff4d4d, #ff0000);
+    border-radius: 2px;
+    background: linear-gradient(90deg, #777, #333);
 }
 
 .mana-bar {
+    span {
+        display: block;
+        height: 6px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, #00ffff, #0077ff);
+    }
+    width: 100%;
     height: 6px;
-    border-radius: 4px;
-    background: linear-gradient(90deg, #00ffff, #0077ff);
+    border-radius: 2px;
+    background: linear-gradient(90deg, #777, #333);
 }
 
 .dados {
@@ -50,11 +68,29 @@ body {
 }
 
 .player-board {
+
+    .tabletop-panel {
+        margin-top: -18px;
+        height: calc(100vh - 92px);
+        border-top: 1px solid var(--divisor-border-color);
+        //border-bottom: 1px solid var(--divisor-border-color);
+    }
     height: calc(100vh - 10px);
     .side-panel {
         margin-top: 32px;
         height: calc(100vh - 92px);
-        border: 1px solid rgba(0, 255, 255, 0.2);
+        border-left: 1px solid var(--divisor-border-color);
+        border-right: 1px solid var(--divisor-border-color);
+    }
+    .character-actions {
+        .v-btn {
+            border: 1px solid rgba(0, 255, 255, 0.3764705882);
+            color: var(--ciano-color);
+            opacity: 0.5;
+        }
+        .v-btn:hover {
+            opacity: 1;
+        }
     }
     .side-panel .side-panel-card-body {
         overflow: auto;
@@ -68,6 +104,8 @@ body {
 
     .info-group {
         background-color: #0d141b;
+        border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+        border-radius: 10px;
 
         .info-group-title {
             font-size: 1.0em;
@@ -154,7 +192,9 @@ body {
         }
     }
 }
-
+.player-board-footer {
+    border-top: 1px solid #00ffff33 !important;
+}
 /* shimmer animation * /
 @keyframes shimmer {
     from {
