@@ -17,10 +17,10 @@
 
         <div class="me-1 ms-1 mb-2">
           <v-row dense>
-            <attribute-badge class="v-col v-col-12 py-1" value="José Paulo" label="Jogador" icon="mdi-account"/>
-            <attribute-badge class="v-col v-col-12 py-1" value="Artemis Volski" label="Personagem" icon="mdi-sword"/>
-            <attribute-badge class="v-col v-col-12 py-1" value="Elfo - Druida - Nv. 7" label="Raça"
+            <attribute-badge class="v-col v-col-12 py-1" :value="player.name" label="Personagem" icon="mdi-sword"/>
+            <attribute-badge class="v-col v-col-12 py-1" :value="rcl" label="Raça"
                              icon="mdi-unicorn-variant"/>
+            <attribute-badge class="v-col v-col-12 py-1 opacity-70" :value="player.user.name" label="Jogador" icon="mdi-account"/>
           </v-row>
         </div>
 
@@ -35,32 +35,32 @@
         <div class="ma-1">
           <v-row dense>
             <v-col cols="4" class="pe-4 ps-4 pb-1 pt-0">
-              <attribute-badge :icon-size="20" value="7" label="Destreza" icon="mdi-run"/>
+              <attribute-badge :icon-size="20" :value="player.attributes.dexterity" label="Destreza" icon="mdi-run"/>
             </v-col>
             <v-col cols="4" class="pe-4 ps-4 pb-1 pt-0">
-              <attribute-badge :icon-size="20" value="5" label="Força" icon="mdi-arm-flex"/>
+              <attribute-badge :icon-size="20" :value="player.attributes.strength" label="Força" icon="mdi-arm-flex"/>
             </v-col>
             <v-col cols="4" class="pe-4 ps-4 pb-1 pt-0">
-              <attribute-badge :icon-size="20" value="6" label="Constituição" icon="mdi-heart"/>
+              <attribute-badge :icon-size="20" :value="player.attributes.constitution" label="Constituição" icon="mdi-heart"/>
             </v-col>
             <v-col cols="4" class="pe-4 ps-4 pb-0 pt-0">
-              <attribute-badge :icon-size="20" value="8" label="Inteligência"
+              <attribute-badge :icon-size="20" :value="player.attributes.intelligence" label="Inteligência"
                                icon="mdi-head-snowflake-outline"/>
             </v-col>
             <v-col cols="4" class="pe-4 ps-4 pb-0 pt-0">
-              <attribute-badge :icon-size="20" value="4" label="Sabedoria" icon="mdi-school"/>
+              <attribute-badge :icon-size="20" :value="player.attributes.wisdom" label="Sabedoria" icon="mdi-school"/>
             </v-col>
             <v-col cols="4" class="pe-4 ps-4 pb-0 pt-0">
-              <attribute-badge :icon-size="20" value="3" label="Carisma" icon="mdi-music-note"/>
+              <attribute-badge :icon-size="20" :value="player.attributes.charisma" label="Carisma" icon="mdi-music-note"/>
             </v-col>
 
           </v-row>
         </div>
         <div class="ma-1 mt-3 mb-3">
           <div class="text-caption">HP</div>
-          <v-progress-linear color="red-darken-2" height="6" rounded model-value="80"/>
+          <v-progress-linear color="red-darken-2" height="6" rounded :model-value="player.hp"/>
           <div class="text-caption mt-1">Mana</div>
-          <v-progress-linear color="cyan" height="6" rounded model-value="60"/>
+          <v-progress-linear color="cyan" height="6" rounded :model-value="player.mana"/>
         </div>
       </v-sheet>
 
@@ -72,9 +72,9 @@
         </div>
         <div class="me-1 ms-1 mb-2">
           <div class="d-flex flex-wrap gap-2">
-            <div class="attribute-tag highlight mb-1">Forma Selvagem</div>
-            <div class="attribute-tag highlight mb-1">Rajada de Vento</div>
-            <div class="attribute-tag highlight mb-1">Chamado da Floresta</div>
+            <div class="attribute-tag highlight mb-1" v-for="skill in player.skills">
+              {{ skill }}
+            </div>
           </div>
         </div>
       </v-sheet>
@@ -87,9 +87,9 @@
         </div>
         <div class="me-1 ms-1 mb-2">
           <div class="d-flex flex-wrap gap-2">
-            <div class="attribute-tag highlight mb-1">Bastão Druídico</div>
-            <div class="attribute-tag highlight mb-1">Amuleto da Lua</div>
-            <div class="attribute-tag highlight mb-1">Poções de Cura (3)</div>
+            <div class="attribute-tag highlight mb-1" v-for="equip in player.equipments">
+              {{ equip }}
+            </div>
           </div>
         </div>
       </v-sheet>
@@ -99,8 +99,22 @@
 </template>
 
 <script setup>
-
 import AttributeBadge from "@/modules/board/components/AttributeBadge.vue";
+import PlayerModel from "@/modules/board/models/PlayerModel.js";
+import {computed} from "vue";
+
+const props = defineProps({
+  player: {
+    type: PlayerModel,
+    required: true
+  }
+});
+const rcl = computed(() => {
+  if(!props.player.race)
+    return "Unknown";
+  const p = props.player;
+  return ([p.race, p.cls, `Nvl. ${p.level}`]).join(' - ');
+});
 </script>
 
 <style scoped lang="sass">

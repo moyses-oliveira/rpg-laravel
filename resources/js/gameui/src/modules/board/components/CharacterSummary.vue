@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="character-actions text-end mt-1 mb-0">
-            <v-btn-group size="x-small" style="height: 26px;">
+            <v-btn-group size="x-small" style="height: 26px;" @click.prevent="()=>viewPlayer()">
               <v-btn size="x-small" variant="elevated">
                 <v-icon size="16" left>mdi-eye</v-icon>
               </v-btn>
@@ -70,7 +70,12 @@
 
 <script setup>
 import PlayerModel from '@/modules/board/models/PlayerModel';
+import {defineEmits} from 'vue'
 
+const emit = defineEmits(['view'])
+function viewPlayer() {
+  emit('view');
+}
 const props = defineProps({
   player: {
     type: PlayerModel,
