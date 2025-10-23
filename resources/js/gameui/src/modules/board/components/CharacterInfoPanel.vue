@@ -1,14 +1,7 @@
 <template>
 
-  <v-card flat class="bg-panel pa-0 character">
-    <v-card-title class="ciano text-h6 d-flex align-center">
-      <v-icon class="me-2">mdi-account-details</v-icon>
-      Ficha de Personagem
-    </v-card-title>
-    <v-divider></v-divider>
 
-    <v-card-text class="text-body-2 pt-1 pb-1 pe-2 ps-2 side-panel-card-body">
-      <!-- BLOCO 1: INFORMAÇÕES -->
+
       <v-sheet class="pa-2 mt-2 info-group" rounded="lg" border>
         <div class="info-group-title">
           <v-icon size="16" class="me-1">mdi-information</v-icon>
@@ -93,15 +86,15 @@
           </div>
         </div>
       </v-sheet>
-    </v-card-text>
-  </v-card>
+
 
 </template>
 
 <script setup>
 import AttributeBadge from "@/modules/board/components/AttributeBadge.vue";
 import PlayerModel from "@/modules/board/models/PlayerModel.js";
-import {computed} from "vue";
+import {computed, defineEmits} from 'vue'
+const emit = defineEmits(['close'])
 
 const props = defineProps({
   player: {
@@ -115,6 +108,7 @@ const rcl = computed(() => {
   const p = props.player;
   return ([p.race, p.cls, `Nvl. ${p.level}`]).join(' - ');
 });
+
 </script>
 
 <style scoped lang="sass">

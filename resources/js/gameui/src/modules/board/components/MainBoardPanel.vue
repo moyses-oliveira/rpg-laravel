@@ -1,5 +1,5 @@
 <template>
-  <v-card flat class="bg-panel pa-3 character">
+  <v-card flat class="bg-panel pa-1 character">
     <v-card-title class="ciano text-h6 d-flex align-center">
       <v-icon class="me-2">mdi-account-details</v-icon>
       Jogadores

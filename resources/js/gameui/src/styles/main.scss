@@ -107,6 +107,14 @@ body {
         height: calc(100vh - 92px);
         border-left: 1px solid var(--divisor-border-color);
         border-right: 1px solid var(--divisor-border-color);
+        border-top: 1px solid var(--divisor-border-color);
+        .close-btn {
+            min-width: 30px;
+            background-color: transparent;
+            border: 1px solid var(--divisor-border-color);
+            color: #F66;
+            opacity: 0.7;
+        }
     }
 
     .character-actions {

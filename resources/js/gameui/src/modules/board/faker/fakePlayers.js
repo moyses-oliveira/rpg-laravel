@@ -6,7 +6,7 @@ export const collection = [
     "race": "Human",
     "hp": 100,
     "mana": 50,
-    "avatar": "https://i.pravatar.cc/50?img=11",
+    "avatar": "https://i.pravatar.cc/60?img=11",
     "level": 10,
     "attributes": {
       "dexterity": 8,
@@ -28,7 +28,7 @@ export const collection = [
     ],
     "user": {
       "name": "John Doe",
-      "avatar": "https://i.pravatar.cc/50?img=5"
+      "avatar": "https://i.pravatar.cc/60?img=5"
     }
   },
   {
@@ -38,7 +38,7 @@ export const collection = [
     "race": "Elf",
     "hp": 70,
     "mana": 65,
-    "avatar": "https://i.pravatar.cc/50?img=44",
+    "avatar": "https://i.pravatar.cc/60?img=44",
     "level": 12,
     "attributes": {
       "dexterity": 10,
@@ -60,7 +60,7 @@ export const collection = [
     ],
     "user": {
       "name": "Morry Dry",
-      "avatar": "https://i.pravatar.cc/50?img=65"
+      "avatar": "https://i.pravatar.cc/60?img=65"
     }
   },
   {
@@ -70,7 +70,7 @@ export const collection = [
     "race": "Elf",
     "hp": 85,
     "mana": 60,
-    "avatar": "https://i.pravatar.cc/50?img=64",
+    "avatar": "https://i.pravatar.cc/60?img=64",
     "level": 8,
     "attributes": {
       "dexterity": 16,
@@ -92,7 +92,7 @@ export const collection = [
     ],
     "user": {
       "name": "Alishon Ahmad",
-      "avatar": "https://i.pravatar.cc/50?img=64"
+      "avatar": "https://i.pravatar.cc/60?img=64"
     }
   },
   {
@@ -102,7 +102,7 @@ export const collection = [
     "race": "Dwarf",
     "hp": 100,
     "mana": 80,
-    "avatar": "https://i.pravatar.cc/50?img=68",
+    "avatar": "https://i.pravatar.cc/60?img=68",
     "level": 15,
     "attributes": {
       "dexterity": 10,
@@ -124,7 +124,7 @@ export const collection = [
     ],
     "user": {
       "name": "Broney Miller Second",
-      "avatar": "https://i.pravatar.cc/50?img=68"
+      "avatar": "https://i.pravatar.cc/60?img=68"
     }
   },
   {
@@ -134,7 +134,7 @@ export const collection = [
     "race": "Halfling",
     "hp": 75,
     "mana": 40,
-    "avatar": "https://i.pravatar.cc/50?img=46",
+    "avatar": "https://i.pravatar.cc/60?img=46",
     "level": 9,
     "attributes": {
       "dexterity": 17,
@@ -156,7 +156,7 @@ export const collection = [
     ],
     "user": {
       "name": "Five Tails Lopsided",
-      "avatar": "https://i.pravatar.cc/50?img=71"
+      "avatar": "https://i.pravatar.cc/60?img=71"
     }
   }
 ]
