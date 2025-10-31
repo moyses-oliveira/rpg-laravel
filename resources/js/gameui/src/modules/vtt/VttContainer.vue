@@ -19,6 +19,12 @@ const options = {
   height: 800,
   backgroundColor: 0x000000
 };
+const props = defineProps({
+  players: {
+    type: Array,
+    required: true,
+  },
+});
 
 onMounted(() => {
 
@@ -26,10 +32,10 @@ onMounted(() => {
     return;
 
 
-  app.init(options)
-    .then((appRender) => {
+  app.init()
+    .then(() => {
       container.value.appendChild(app.canvas);
-      PixiApplication.init(app)
+      PixiApplication.init(app, props.players)
     })
 
 });

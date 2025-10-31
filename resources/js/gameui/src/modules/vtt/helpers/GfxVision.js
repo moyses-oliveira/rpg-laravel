@@ -5,7 +5,7 @@ export default class GfxVision {
     radius = 200;
     rays = 180;
 
-    constructor(walls, radius = 200, rays = 180) {
+    constructor(walls, radius = 100, rays = 180) {
         this.walls = walls;
         this.radius = radius;
         this.rays = rays;
@@ -14,7 +14,7 @@ export default class GfxVision {
     render(px, py) {
         this.points = [];
         // Para cada raio, andamos em passos discretos até radius ou até colidir com uma parede
-        for (let i = 0; i < this.rays; i++)
+        for (let i = 0; i < this.rays; i+=10)
             this.appendPoint(px, py, i);
 
         return this.points;

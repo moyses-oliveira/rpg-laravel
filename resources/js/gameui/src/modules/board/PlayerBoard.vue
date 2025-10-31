@@ -7,7 +7,7 @@
       </v-col>
 
       <v-col :cols="!!activePlayer.id ? 6 : 9" class="d-flex flex-column align-center justify-center">
-        <vtt-container />
+        <vtt-container :players="players"/>
       </v-col>
 
       <v-col v-if="showSidePanelEnd" cols="3" class="side-panel bg-panel pa-2 d-flex flex-column justify-space-between">

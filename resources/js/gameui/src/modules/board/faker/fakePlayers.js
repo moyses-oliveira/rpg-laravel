@@ -6,7 +6,7 @@ export const collection = [
     "race": "Human",
     "hp": 100,
     "mana": 50,
-    "avatar": "https://i.pravatar.cc/60?img=11",
+    "avatar": "/img/11.jpg",
     "level": 10,
     "attributes": {
       "dexterity": 8,
@@ -28,7 +28,7 @@ export const collection = [
     ],
     "user": {
       "name": "John Doe",
-      "avatar": "https://i.pravatar.cc/60?img=5"
+      "avatar": "/img/11.jpg"
     }
   },
   {
@@ -38,7 +38,7 @@ export const collection = [
     "race": "Elf",
     "hp": 70,
     "mana": 65,
-    "avatar": "https://i.pravatar.cc/60?img=44",
+    "avatar": "/img/44.jpg",
     "level": 12,
     "attributes": {
       "dexterity": 10,
@@ -60,7 +60,7 @@ export const collection = [
     ],
     "user": {
       "name": "Morry Dry",
-      "avatar": "https://i.pravatar.cc/60?img=65"
+      "avatar": "/img/44.jpg"
     }
   },
   {
@@ -70,7 +70,7 @@ export const collection = [
     "race": "Elf",
     "hp": 85,
     "mana": 60,
-    "avatar": "https://i.pravatar.cc/60?img=64",
+    "avatar": "/img/64.jpg",
     "level": 8,
     "attributes": {
       "dexterity": 16,
@@ -92,7 +92,7 @@ export const collection = [
     ],
     "user": {
       "name": "Alishon Ahmad",
-      "avatar": "https://i.pravatar.cc/60?img=64"
+      "avatar": "/img/64.jpg"
     }
   },
   {
@@ -102,7 +102,7 @@ export const collection = [
     "race": "Dwarf",
     "hp": 100,
     "mana": 80,
-    "avatar": "https://i.pravatar.cc/60?img=68",
+    "avatar": "/img/68.jpg",
     "level": 15,
     "attributes": {
       "dexterity": 10,
@@ -124,7 +124,7 @@ export const collection = [
     ],
     "user": {
       "name": "Broney Miller Second",
-      "avatar": "https://i.pravatar.cc/60?img=68"
+      "avatar": "/img/68.jpg"
     }
   },
   {
@@ -134,7 +134,7 @@ export const collection = [
     "race": "Halfling",
     "hp": 75,
     "mana": 40,
-    "avatar": "https://i.pravatar.cc/60?img=46",
+    "avatar": "/img/46.jpg",
     "level": 9,
     "attributes": {
       "dexterity": 17,
@@ -156,7 +156,7 @@ export const collection = [
     ],
     "user": {
       "name": "Five Tails Lopsided",
-      "avatar": "https://i.pravatar.cc/60?img=71"
+      "avatar": "/img/46.jpg"
     }
   }
 ]

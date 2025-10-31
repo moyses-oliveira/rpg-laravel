@@ -18,10 +18,13 @@ export default class VisionMaskRendering extends AbstractRendering{
         gameContainer.mask = this.gfx;
     }
 
+    clear() {
+      this.gfx.clear();
+    }
 
-    render(x,y) {
+    draw(x,y) {
         const pts = this.gfxVision.render(x,y);
-        this.gfx.clear();
+
         if (pts.length) {
             this.gfx.moveTo(pts[0].x, pts[0].y);
             for (let i = 1; i < pts.length; i++) {
