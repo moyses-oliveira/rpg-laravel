@@ -38,8 +38,8 @@ export default class GameContainer extends AbstractContainer {
 
   randomPos(i) {
     let position = [];
-    for(let x=40;x<=100;x+=20)
-      for(let y=40;y<=100;y+=20)
+    for(let x=50;x<=150;x+=50)
+      for(let y=50;y<=150;y+=50)
         position.push({x,y});
 
     return position[i];

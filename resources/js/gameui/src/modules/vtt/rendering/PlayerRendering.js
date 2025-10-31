@@ -1,23 +1,24 @@
 import AbstractRendering from "./AbstractRendering";
-import {Assets, Graphics, Sprite} from "pixi.js";
+import {Assets, Container, Graphics, Sprite} from "pixi.js";
 import Physics from "../helpers/Physics";
 import {MAP_WALLS} from "../dynamicAssets/map";
 
 
 export default class PlayerRendering extends AbstractRendering {
 
-  radius = 10;
+  radius = 20;
   speed = 2
   px = 0;
   py = 0;
 
   constructor(x, y, img) {
     super();
-    this.gfx = new Graphics();
+    this.gfx = new Container();
 
     const disk = new Graphics();
     disk.circle(0, 0, this.radius);
     disk.fill({color: 0x00ff99});
+    disk.stroke({ width: 4, color: 0x00ff99 });
     this.gfx.addChild(disk);
 
     Assets.load(img).then((texture) => {

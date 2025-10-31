@@ -48,6 +48,9 @@
           <div class="character-actions text-end mt-2 mb-0">
             <v-btn-group size="x-small" style="height: 26px;" @click.prevent="()=>viewPlayer()">
               <v-btn size="x-small" variant="elevated">
+                <v-icon size="16" left>mdi-cursor-move</v-icon>
+              </v-btn>
+              <v-btn size="x-small" variant="elevated">
                 <v-icon size="16" left>mdi-eye</v-icon>
               </v-btn>
               <v-btn size="x-small" variant="elevated">
