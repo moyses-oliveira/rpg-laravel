@@ -2,6 +2,7 @@ import AbstractRendering from "./AbstractRendering";
 import {Assets, Container, Graphics, Sprite} from "pixi.js";
 import Physics from "../helpers/Physics";
 import {MAP_WALLS} from "../dynamicAssets/map";
+import PixiApplication from "@/modules/vtt/PixiApplication.js";
 
 
 export default class PlayerRendering extends AbstractRendering {
@@ -11,9 +12,10 @@ export default class PlayerRendering extends AbstractRendering {
   px = 0;
   py = 0;
 
-  constructor(x, y, img) {
+  constructor(x, y, img, key) {
     super();
     this.gfx = new Container();
+    this.gfx.eventMode = 'static';
 
     const disk = new Graphics();
     disk.circle(0, 0, this.radius);
@@ -34,6 +36,10 @@ export default class PlayerRendering extends AbstractRendering {
       this.gfx.addChild(mask);
     });
     this.setPos(x, y)
+
+    this.gfx.on('pointertap', () => {
+      PixiApplication.selectPlayer(key);
+    });
   }
 
   render(keys) {

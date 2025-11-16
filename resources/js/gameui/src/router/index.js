@@ -5,7 +5,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/player-board',
+      path: '/',
       name: 'PlayerBoard',
       component: () => import('@/modules/board/PlayerBoard.vue')
     },

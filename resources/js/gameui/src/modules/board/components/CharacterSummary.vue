@@ -6,9 +6,10 @@
     <v-row align="center" dense>
       <v-col cols="3" class="text-center pb-0 pt-0">
         <div>
-          <v-avatar  size="60">
+          <v-avatar  size="60" :class="player.marks.view ? 'mark-view' : ''">
             <img :src="player.avatar" alt="avatar"/>
           </v-avatar>
+          <v-icon class="mark-move" :class="player.marks.move ? 'show' : 'hide'" style="">mdi-cursor-move</v-icon>
         </div>
 
       </v-col>
@@ -46,11 +47,11 @@
             </div>
           </div>
           <div class="character-actions text-end mt-2 mb-0">
-            <v-btn-group size="x-small" style="height: 26px;" @click.prevent="()=>viewPlayer()">
-              <v-btn size="x-small" variant="elevated">
+            <v-btn-group size="x-small" style="height: 26px;">
+              <v-btn size="x-small" variant="elevated"  @click.prevent="()=>move()">
                 <v-icon size="16" left>mdi-cursor-move</v-icon>
               </v-btn>
-              <v-btn size="x-small" variant="elevated">
+              <v-btn size="x-small" variant="elevated"  @click.prevent="()=>view()">
                 <v-icon size="16" left>mdi-eye</v-icon>
               </v-btn>
               <v-btn size="x-small" variant="elevated">
@@ -77,9 +78,12 @@
 import PlayerModel from '@/modules/board/models/PlayerModel';
 import {defineEmits} from 'vue'
 
-const emit = defineEmits(['view'])
-function viewPlayer() {
+const emit = defineEmits(['view', 'move'])
+function view() {
   emit('view');
+}
+function move() {
+  emit('move');
 }
 const props = defineProps({
   player: {
@@ -92,6 +96,20 @@ const props = defineProps({
 </script>
 
 
-<style scoped lang="sass">
-
+<style scoped lang="scss">
+.mark-move {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  color: white;
+  opacity: 0.8;
+  text-shadow: 0 0 10px black;
+  font-size: 20px;
+  &.hide {
+    display: none;
+  }
+}
+.mark-view {
+  border: 1px solid cyan;
+}
 </style>

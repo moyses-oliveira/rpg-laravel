@@ -9,7 +9,12 @@
     <v-card-text class="text-body-2 pa-0 mt-3 side-panel-card-body">
       <!-- Jogadores -->
       <div v-for="player in players" :key="player.id" class="jogador">
-        <character-summary :player="player" @view="()=>viewPlayer(player)" />
+        <character-summary
+          :player="player"
+          @view="()=>viewPlayer(player)"
+          @move="()=>movePlayer(player)"
+
+        />
       </div>
 
     </v-card-text>
@@ -21,18 +26,23 @@ import PlayerModel from "@/modules/board/models/PlayerModel.js";
 import CharacterSummary from "@/modules/board/components/CharacterSummary.vue";
 import {defineEmits} from 'vue'
 
-const emit = defineEmits(['view-player'])
+const emit = defineEmits(['view-player', 'move-player'])
 
 function viewPlayer(player) {
   emit("view-player", player);
 }
+function movePlayer(player) {
+  emit("move-player", player);
+}
 
-defineProps({
+const props = defineProps({
   players: {
     type: Array,
     required: true,
   },
 });
+
+
 </script>
 <style scoped lang="sass">
 

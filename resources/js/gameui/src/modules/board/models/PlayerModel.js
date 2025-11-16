@@ -28,6 +28,16 @@ export default class PlayerModel {
     avatar: ''
   }
 
+  marks = {
+    move: false,
+    view: false
+  }
+
+  clearMarks(k) {
+    this.marks[k] = false
+  }
+
+
   constructor(data) {
     if(!data)
       return;

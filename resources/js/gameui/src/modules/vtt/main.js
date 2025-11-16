@@ -1,8 +1,7 @@
-import * as PIXI from 'pixi.js';
+import { Application } from "pixi.js";
 import PixiApplication from "./PixiApplication";
 const BUNNY_URL = 'https://pixijs.io/examples/examples/assets/bunny.png';
-// Cria o app
-const app = new PIXI.Application();
+const app = new Application();
 
 
 

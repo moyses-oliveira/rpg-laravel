@@ -19,7 +19,7 @@ export default class GameContainer extends AbstractContainer {
     this.totalPlayers = this.playersModel.length;
     for (let i = 0; i < this.totalPlayers; i++) {
       const pos = this.randomPos(i);
-      this.players.push(new PlayerRendering(pos.x, pos.y, this.playersModel[i].avatar));
+      this.players.push(new PlayerRendering(pos.x, pos.y, this.playersModel[i].avatar, i));
     }
   }
 

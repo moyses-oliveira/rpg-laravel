@@ -5,7 +5,6 @@ import {MAP_WALLS} from "../dynamicAssets/map";
 
 export default class VisionMaskRendering extends AbstractRendering{
 
-
     gfxVision;
 
     constructor(container, gameContainer) {
@@ -26,11 +25,7 @@ export default class VisionMaskRendering extends AbstractRendering{
         const pts = this.gfxVision.render(x,y);
 
         if (pts.length) {
-            this.gfx.moveTo(pts[0].x, pts[0].y);
-            for (let i = 1; i < pts.length; i++) {
-                this.gfx.lineTo(pts[i].x, pts[i].y);
-            }
-            this.gfx.closePath();
+            this.gfx.poly(pts);
             this.gfx.fill({ color: 0xffffff, alpha: 1 });
         }
     }
