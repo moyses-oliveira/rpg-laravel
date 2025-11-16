@@ -1,4 +1,4 @@
-import {Container, Graphics} from "pixi.js";
+import {Assets, Container, Graphics, Sprite} from "pixi.js";
 import {MAP_WALLS} from "../dynamicAssets/map";
 import AbstractContainer from "./AbstractContainer";
 
@@ -12,6 +12,13 @@ export default class MapContainer extends AbstractContainer {
             g.fill({color: 0x000000, alpha: 0.0});
             this.gfx.addChild(g);
         }
+        const map = '/img/scenario.webp'
+        Assets.load(map).then((texture) => {
+          const sprite = new Sprite(texture);
+          sprite.width = 1596;
+          sprite.height = 912;
+          this.gfx.addChild(sprite);
+        });
         const texture = new Graphics();
         texture.rect(0, 0, 800, 800);
         texture.fill({color: 0xFFFFFF, alpha: 1});
@@ -19,7 +26,7 @@ export default class MapContainer extends AbstractContainer {
 
         const random = new Graphics();
         random.rect(200, 200, 200, 200);
-        random.fill({color: 0xFF9900, alpha: 1});
+        random.fill({color: 0x000000, alpha: 1});
         this.gfx.addChild(random);
     }
 }

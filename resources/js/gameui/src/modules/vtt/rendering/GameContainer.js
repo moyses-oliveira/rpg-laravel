@@ -37,9 +37,11 @@ export default class GameContainer extends AbstractContainer {
   }
 
   randomPos(i) {
+    const sx = 1000;
+    const sy = 150;
     let position = [];
-    for(let x=50;x<=150;x+=50)
-      for(let y=50;y<=150;y+=50)
+    for(let x=sx;x<=(sx+100);x+=50)
+      for(let y=sy;y<=(sy + 100);y+=50)
         position.push({x,y});
 
     return position[i];

@@ -1,5 +1,5 @@
 <template>
-  <div style="overflow: auto;height: calc(100vh - 120px)">
+  <div style="overflow: auto;height: calc(100vh - 220px)">
     <div ref="container">
 
     </div>
@@ -15,8 +15,8 @@ const container = ref(null);
 
 const app = new PIXI.Application();
 const options = {
-  width: 800,
-  height: 800,
+  width: 600,
+  height: 400,
   backgroundColor: 0x000000
 };
 const props = defineProps({
@@ -32,7 +32,7 @@ onMounted(() => {
     return;
 
 
-  app.init()
+  app.init(options)
     .then(() => {
       container.value.appendChild(app.canvas);
       PixiApplication.init(app, props.players)

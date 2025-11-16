@@ -31,6 +31,15 @@ export default class PixiApplication {
         return;
 
       p.render(KeyTriggers.keys)
+      const screenWidth = app.renderer.width;
+      const screenHeight = app.renderer.height;
+      const centerX = screenWidth / 2;
+      const centerY = screenHeight / 2;
+
+      // 2. Adjust the world container's position
+      // We move the world opposite to the player's position
+      app.stage.x = centerX - p.px;
+      app.stage.y = centerY - p.py
     });
   }
 

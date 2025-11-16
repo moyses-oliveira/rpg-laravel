@@ -78,7 +78,7 @@ const closeCharacterInfo = () => {
 }
 
 const movePlayer = (player) => {
-  clearMarks('view');
+  clearMarks('move');
   PixiApplication.selectPlayerById(player.id);
   player.marks.move = true
 }
