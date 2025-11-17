@@ -11,17 +11,17 @@ export default class PlayerRendering extends AbstractRendering {
   speed = 2
   px = 0;
   py = 0;
+  token = null;
 
   constructor(x, y, img, key) {
     super();
     this.gfx = new Container();
     this.gfx.eventMode = 'static';
 
-    const disk = new Graphics();
-    disk.circle(0, 0, this.radius);
-    disk.fill({color: 0x00ff99});
-    disk.stroke({ width: 4, color: 0x00ff99 });
-    this.gfx.addChild(disk);
+    this.token = new Graphics();
+    this.token.circle(0, 0, this.radius);
+    this.token.stroke({ width: 4, color: 0x000000 });
+    this.gfx.addChild(this.token);
 
     Assets.load(img).then((texture) => {
       const sprite = new Sprite(texture);
@@ -42,7 +42,14 @@ export default class PlayerRendering extends AbstractRendering {
     });
   }
 
+  strokeToken(strokeColor) {
+    this.token.clear();
+    this.token.circle(0, 0, 20);
+    this.token.stroke({width: 4, color: strokeColor});
+  }
+
   render(keys) {
+    const vtt = window.vtt;
     let nx = this.gfx.x;
     let ny = this.gfx.y;
     if (keys['w'] || keys['ArrowUp']) ny -= this.speed;
@@ -50,9 +57,12 @@ export default class PlayerRendering extends AbstractRendering {
     if (keys['a'] || keys['ArrowLeft']) nx -= this.speed;
     if (keys['d'] || keys['ArrowRight']) nx += this.speed;
 
-    if (!Physics.colisions(nx, ny, MAP_WALLS, this.radius)) {
+    if (!vtt.game.map.isTransparentAt(nx, ny)) {
       this.setPos(nx, ny)
     }
+    //
+    // if (!Physics.colisions(nx, ny, MAP_WALLS, this.radius)) {
+    // }
   }
 
   setPos(x, y) {

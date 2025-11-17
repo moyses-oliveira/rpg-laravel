@@ -15,7 +15,7 @@ const container = ref(null);
 
 const app = new PIXI.Application();
 const options = {
-  width: 600,
+  width: 400,
   height: 400,
   backgroundColor: 0x000000
 };

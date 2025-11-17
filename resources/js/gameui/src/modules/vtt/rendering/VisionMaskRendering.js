@@ -9,7 +9,7 @@ export default class VisionMaskRendering extends AbstractRendering{
 
     constructor(container, gameContainer) {
         super();
-        this.gfxVision = new GfxVision(MAP_WALLS, 800, 800);
+        this.gfxVision = new GfxVision(MAP_WALLS, 300, 100);
         this.gfx = new Graphics();
         this.gfx.interactive = false;
         this.gfx.position.set(0, 0);
