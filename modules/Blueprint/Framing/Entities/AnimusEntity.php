@@ -1,25 +1,23 @@
 <?php
 namespace Modules\Blueprint\Framing\Entities;
 
-use Modules\Blueprint\Framing\Sets\Compositions\CompositionSetInterface;
-use Modules\Blueprint\Framing\Sets\Conditions\ConditionSetInterface;
+use Modules\Blueprint\Framing\Sets\CompositionSet;
+use Modules\Blueprint\Framing\Sets\ConditionSet;
+use Modules\Blueprint\Framing\Sets\Contracts\ItemSetInterface;
+use Modules\Blueprint\Framing\Sets\MasterySet;
+use Modules\Blueprint\Framing\Sets\SkillSet;
 use Modules\Blueprint\Framing\Stats\AnimusStats;
 use Modules\Blueprint\Framing\Stats\ConsumableStat;
 use Modules\Blueprint\Skills\Contracts\SkillInterface;
 
-class AnimusEntity implements AnimusEntityInterface, HardEntityInterface, AgentEntityInterface, InteractiveEntityInterface
+class AnimusEntity implements AnimusEntityInterface, HardEntityInterface, InteractiveEntityInterface
 {
-    private AnimusStats $_animus;
-    private ConsumableStat $_hp;
-
-    /** @var SkillInterface[]  */
-    private array $_skills = [];
-
-    /** @var CompositionSetInterface[]  */
-    private array $compositions = [];
-
-    /** @var ConditionSetInterface[] */
-    private array $conditions = [];
+    protected AnimusStats $_animus;
+    protected ConsumableStat $_hp;
+    protected MasterySet $_masteries;
+    protected SkillSet $_skills;
+    protected CompositionSet $_compositions;
+    protected ConditionSet $_conditions;
 
 
     public function __construct()
@@ -33,7 +31,12 @@ class AnimusEntity implements AnimusEntityInterface, HardEntityInterface, AgentE
         return $this->_hp;
     }
 
-    public function skills(): array
+    public function masteries(): MasterySet
+    {
+        return $this->_masteries;
+    }
+
+    public function skills(): SkillSet
     {
         return $this->_skills;
     }
@@ -43,25 +46,35 @@ class AnimusEntity implements AnimusEntityInterface, HardEntityInterface, AgentE
         return $this->_animus;
     }
 
-    public function addComposition(CompositionSetInterface $set):void
+    public function compositions(): CompositionSet
     {
-        $this->compositions[] = $set;
-    }
-
-    public function addCondition(ConditionSetInterface $set):void
-    {
-        $this->conditions[] = $set;
-    }
-
-    public function getCompositions(): array
-    {
-        return $this->compositions;
+        return $this->_compositions;
 
     }
 
-    public function getConditions(): array
+    public function conditions(): ConditionSet
     {
-        return $this->conditions;
+        return $this->_conditions;
+    }
+
+    public function addMastery(ItemSetInterface $mastery):void
+    {
+        $this->masteries()->add($mastery);
+    }
+
+    public function addSkill(SkillInterface $skill):void
+    {
+        $this->skills()->add($skill);
+    }
+
+    public function addComposition(ItemSetInterface $composition):void
+    {
+        $this->compositions()->add($composition);
+    }
+
+    public function addCondition(ItemSetInterface $condition):void
+    {
+        $this->conditions()->add($condition);
     }
 
 }

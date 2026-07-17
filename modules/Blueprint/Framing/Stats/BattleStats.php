@@ -2,8 +2,8 @@
 
 namespace Modules\Blueprint\Framing\Stats;
 
-use Modules\Blueprint\Framing\Sets\ActiveEffects\AbstractActiveEffectSet;
-use Modules\Blueprint\Framing\Sets\ActiveEffects\ActiveEffectSetInterface;
+use Modules\Blueprint\Effects\ActiveEffects\AbstractActiveEffect;
+use Modules\Blueprint\Framing\Sets\ActiveEffectSet;
 
 class BattleStats
 {
@@ -16,8 +16,8 @@ class BattleStats
     private ConsumableStat $_mp;
     private ConsumableStat $_hp;
 
-    /** @var ActiveEffectSetInterface[] */
-    private array $activeEffects = [];
+    /** @var ActiveEffectSet */
+    private ActiveEffectSet $_activeEffects;
 
     public function __construct()
     {
@@ -28,6 +28,8 @@ class BattleStats
         $this->_will = new MutableStat(0, 100);
         $this->_initiative = new MutableStat(0, 100);
         $this->_mp = new ConsumableStat(0, 0);
+        $this->_hp = new ConsumableStat(0, 0);
+        $this->_activeEffects = new ActiveEffectSet();
     }
 
     public function getAim(): MutableStat
@@ -100,29 +102,29 @@ class BattleStats
         $this->_hp->reset();
     }
 
-    public function pushActiveEffect(AbstractActiveEffectSet $effect): void
+    public function pushActiveEffect(AbstractActiveEffect $effect): void
     {
-        $this->activeEffects[$effect->label()] = $effect;
+        $this->activeEffects()->add($effect);
     }
 
     public function removeActiveEffect(string $label): void
     {
-        unset($this->activeEffects[$label]);
+        $this->activeEffects()->remove($label);
     }
 
     public function expendActiveEffects(): void
     {
-        foreach ($this->activeEffects as $label => $ef) {
+        foreach ($this->activeEffects() as $label => $ef) {
             if ($ef->expend() < 1) {
-                unset($this->activeEffects[$label]);
+                $this->removeActiveEffect($label);
             }
         }
     }
 
-    /** @return ActiveEffectSetInterface[] */
-    public function getActiveEffects(): array
+    public function activeEffects():ActiveEffectSet
     {
-        return $this->activeEffects;
+        return $this->_activeEffects;
     }
+
 
 }

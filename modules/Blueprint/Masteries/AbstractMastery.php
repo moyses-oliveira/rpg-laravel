@@ -1,10 +1,16 @@
 <?php
-namespace Modules\Blueprint\Framing\Entities;
 
-use Modules\Blueprint\Framing\Sets\ProgressionSetInterface;
+namespace Modules\Blueprint\Masteries;
 
-class CharacterEntity extends AnimusEntity implements CharacterEntityInterface
+use Modules\Blueprint\Framing\Entities\AnimusEntity;
+use Modules\Blueprint\Framing\Sets\Contracts\ProgressionSetInterface;
+
+class AbstractMastery
 {
+    public function upgrade(AnimusEntity $entity)
+    {
+        $entity->addSkill();
+    }
 
     protected ?ProgressionSetInterface $progressionSet = null;
 

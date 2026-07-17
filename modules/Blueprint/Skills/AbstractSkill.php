@@ -6,10 +6,6 @@ use Modules\Blueprint\Skills\Contracts\SkillInterface;
 
 abstract class AbstractSkill implements SkillInterface
 {
-    const ALIAS = '';
-
-    const ATTRIBUTE = null;
-    const TYPE = null;
 
 
     /**
@@ -21,4 +17,5 @@ abstract class AbstractSkill implements SkillInterface
     {
         return $entity instanceof BoardAgentInterface;
     }
+
 }

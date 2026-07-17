@@ -1,11 +1,12 @@
 <?php
-namespace Modules\Blueprint\Framing\Entities;
+namespace Modules\Blueprint\Masteries;
 
-use Modules\Blueprint\Framing\Sets\ProgressionSetInterface;
+use Modules\Blueprint\Framing\Sets\Contracts\ProgressionSetInterface;
 
-interface CharacterEntityInterface
+interface MasteryEntityInterface
 {
     public function progressionTrigger(int $level):void;
 
     public function setProgressionSet(?ProgressionSetInterface $progressionSet): void;
+
 }

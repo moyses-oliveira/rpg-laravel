@@ -7,7 +7,7 @@ use Modules\Blueprint\Framing\Stats\InteractiveTokenStats;
 use Modules\Blueprint\Framing\Stats\PositionStats;
 use Modules\Blueprint\Skills\Contracts\SkillInterface;
 
-interface BoardAgentInterface extends AnimusEntityInterface, HardEntityInterface, AgentEntityInterface, InteractiveEntityInterface
+interface BoardAgentInterface extends AnimusEntityInterface, HardEntityInterface, InteractiveEntityInterface
 {
     public function token(): InteractiveTokenStats;
 

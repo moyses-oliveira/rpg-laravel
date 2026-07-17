@@ -1,8 +1,10 @@
 <?php
 
-namespace Modules\Blueprint\Framing\Sets\ActiveEffects;
+namespace Modules\Blueprint\Effects\ActiveEffects;
 
-abstract class AbstractActiveEffectSet implements ActiveEffectSetInterface
+use Modules\Blueprint\Framing\Sets\Contracts\ItemSetInterface;
+
+abstract class AbstractActiveEffect implements ItemSetInterface
 {
 
     private int $_slots = 0;

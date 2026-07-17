@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Blueprint\Framing\Sets;
+namespace Modules\Blueprint\Framing\Sets\Contracts;
 
 use Modules\Blueprint\Framing\Entities\AnimusEntityInterface;
 

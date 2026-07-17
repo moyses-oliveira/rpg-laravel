@@ -2,8 +2,9 @@
 namespace Modules\Blueprint\Skills\Contracts;
 
 use Modules\Blueprint\Framing\Entities\InteractiveEntityInterface;
+use Modules\Blueprint\Framing\Sets\Contracts\ItemSetInterface;
 
-interface SkillInterface
+interface SkillInterface extends ItemSetInterface
 {
 
     /**

@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Blueprint\Taxonomies\Kindreds;
+namespace Modules\Blueprint\Taxonomies\Kindreds\Anthropomorph;
 
 use Modules\Blueprint\Framing\Entities\AnimusEntityInterface;
-use Modules\Blueprint\Framing\Sets\Compositions\AbstractCompositionSet;
+use Modules\Blueprint\Framing\Sets\CompositionSet;
 
-class OrcsKindred extends AbstractCompositionSet
+class OrcsKindred extends CompositionSet
 {
 
     public function modify(AnimusEntityInterface $entity):void
