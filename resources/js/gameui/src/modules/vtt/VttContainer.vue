@@ -1,6 +1,6 @@
 <template>
-  <div style="overflow: auto;height: calc(100vh - 220px)">
-    <div ref="container">
+  <div style="overflow: auto;height: calc(100vh - 80px);width: 100%;">
+    <div ref="container" style="width: 100%;height: 100%;">
 
     </div>
   </div>
@@ -13,12 +13,6 @@ import {ref, onMounted} from 'vue';
 
 const container = ref(null);
 
-const app = new PIXI.Application();
-const options = {
-  width: 400,
-  height: 400,
-  backgroundColor: 0x000000
-};
 const props = defineProps({
   players: {
     type: Array,
@@ -27,6 +21,18 @@ const props = defineProps({
 });
 
 onMounted(() => {
+
+  const containerWidth = container.value?.clientWidth || 0;
+  const containerHeight = container.value?.clientHeight || 0;
+
+
+  console.log(`Container Width: ${containerWidth}, Container Height: ${containerHeight}`);
+  const app = new PIXI.Application();
+  const options = {
+    width: containerWidth - 20,
+    height: containerHeight - 20,
+    backgroundColor: 0x000000
+  };
 
   if (!container.value)
     return;

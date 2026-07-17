@@ -2,11 +2,11 @@
 
 namespace Modules\Blueprint\Framing\Sets;
 
-use Modules\Blueprint\Framing\Entities\AdvancedEntityInterface;
+use Modules\Blueprint\Framing\Entities\AnimusEntityInterface;
 
 interface ProgressionSetInterface extends EntitySetInterface
 {
 
-    public function apply(AdvancedEntityInterface $entity, int $level):void;
+    public function apply(AnimusEntityInterface $entity, int $level):void;
 
 }

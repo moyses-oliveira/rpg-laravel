@@ -34,7 +34,7 @@ export default class MapContainer extends AbstractContainer {
     this.sprite.height = this.h;
     this.gfx.addChild(this.sprite);
 
-    const renderer = window.pixiApp.renderer;
+    const renderer = window.eng.renderer;
 
     // force canvas output
     const canvas = await renderer.extract.canvas(this.sprite, {

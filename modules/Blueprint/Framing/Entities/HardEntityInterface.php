@@ -1,10 +1,10 @@
 <?php
 namespace Modules\Blueprint\Framing\Entities;
 
-use Modules\Blueprint\Framing\Stats\HPEntityAttributesStats;
+use Modules\Blueprint\Framing\Stats\ConsumableStat;
 
 interface HardEntityInterface
 {
 
-    public function hp():HPEntityAttributesStats;
+    public function hp():ConsumableStat;
 }

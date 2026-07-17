@@ -2,16 +2,16 @@
 
 namespace Modules\Blueprint\Taxonomies\Kindreds;
 
-use Modules\Blueprint\Framing\Entities\AdvancedEntityInterface;
-use Modules\Blueprint\Framing\Sets\CompositionSet;
+use Modules\Blueprint\Framing\Entities\AnimusEntityInterface;
+use Modules\Blueprint\Framing\Sets\Compositions\AbstractCompositionSet;
 
-class OrcsKindred extends CompositionSet
+class OrcsKindred extends AbstractCompositionSet
 {
 
-    public function modify(AdvancedEntityInterface $entity):void
+    public function modify(AnimusEntityInterface $entity):void
     {
-        $entity->atr()
-            ->modConstitution(1)
-            ->modIntelligence(-1);
+        $entity->animus()
+            ->modCT(1)
+            ->modIQ(-1);
     }
 }

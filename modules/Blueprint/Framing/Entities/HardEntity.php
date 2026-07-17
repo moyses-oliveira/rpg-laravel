@@ -2,18 +2,18 @@
 
 namespace Modules\Blueprint\Framing\Entities;
 
-use Modules\Blueprint\Framing\Stats\HPEntityAttributesStats;
+use Modules\Blueprint\Framing\Stats\ConsumableStat;
 
-class HardEntity implements HardEntityInterface
+class HardEntity implements HardEntityInterface, InteractiveEntityInterface
 {
-    private HPEntityAttributesStats $_hp;
+    private ConsumableStat $_hp;
 
     public function __construct()
     {
-        $this->_hp = new HPEntityAttributesStats();
+        $this->_hp = new ConsumableStat(0,0);
     }
 
-    public function hp(): HPEntityAttributesStats
+    public function hp(): ConsumableStat
     {
         return $this->_hp;
     }

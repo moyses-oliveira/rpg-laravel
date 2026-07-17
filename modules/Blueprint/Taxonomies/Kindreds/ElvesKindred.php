@@ -2,17 +2,17 @@
 
 namespace Modules\Blueprint\Taxonomies\Kindreds;
 
-use Modules\Blueprint\Framing\Entities\AdvancedEntityInterface;
-use Modules\Blueprint\Framing\Sets\CompositionSet;
+use Modules\Blueprint\Framing\Entities\AnimusEntityInterface;
+use Modules\Blueprint\Framing\Sets\Compositions\AbstractCompositionSet;
 
-class ElvesKindred extends CompositionSet
+class ElvesKindred extends AbstractCompositionSet
 {
 
-    public function modify(AdvancedEntityInterface $entity):void
+    public function modify(AnimusEntityInterface $entity):void
     {
-        $entity->atr()
-            ->modWisdom(1)
-            ->modStrength(-1);
+        $entity->animus()
+            ->modWS(1)
+            ->modST(-1);
 //        $entity->skills()->add(DetectPoisonBonus::Alias);
     }
 }

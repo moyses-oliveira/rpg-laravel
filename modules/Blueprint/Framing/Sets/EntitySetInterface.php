@@ -2,9 +2,9 @@
 
 namespace Modules\Blueprint\Framing\Sets;
 
-use Modules\Blueprint\Framing\Entities\AdvancedEntityInterface;
+use Modules\Blueprint\Framing\Entities\AnimusEntityInterface;
 
 interface EntitySetInterface
 {
-    public function modify(AdvancedEntityInterface $entity):void;
+    public function modify(AnimusEntityInterface $entity):void;
 }

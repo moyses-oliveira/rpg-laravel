@@ -3,7 +3,7 @@ namespace Modules\Blueprint\Framing\Entities;
 
 use Modules\Blueprint\Framing\Sets\ProgressionSetInterface;
 
-class CharacterEntity extends AdvancedEntity implements CharacterEntityInterface
+class CharacterEntity extends AnimusEntity implements CharacterEntityInterface
 {
 
     protected ?ProgressionSetInterface $progressionSet = null;

@@ -8,7 +8,7 @@ import PixiApplication from "@/modules/vtt/PixiApplication.js";
 export default class PlayerRendering extends AbstractRendering {
 
   radius = 20;
-  speed = 2
+  speed = 10
   px = 0;
   py = 0;
   token = null;
@@ -20,7 +20,7 @@ export default class PlayerRendering extends AbstractRendering {
 
     this.token = new Graphics();
     this.token.circle(0, 0, this.radius);
-    this.token.stroke({ width: 4, color: 0x000000 });
+    this.token.stroke({width: 4, color: 0x000000});
     this.gfx.addChild(this.token);
 
     Assets.load(img).then((texture) => {
@@ -48,14 +48,40 @@ export default class PlayerRendering extends AbstractRendering {
     this.token.stroke({width: 4, color: strokeColor});
   }
 
-  render(keys) {
+  action(key, press) {
+    if(!press) {
+      this.pressed = null;
+      return;
+    }
+
+    if(press && this.pressed === key)
+      return;
+
+    this.pressed = key;
     const vtt = window.vtt;
     let nx = this.gfx.x;
     let ny = this.gfx.y;
-    if (keys['w'] || keys['ArrowUp']) ny -= this.speed;
-    if (keys['s'] || keys['ArrowDown']) ny += this.speed;
-    if (keys['a'] || keys['ArrowLeft']) nx -= this.speed;
-    if (keys['d'] || keys['ArrowRight']) nx += this.speed;
+    switch (key) {
+      case 'w':
+      case 'ArrowUp':
+        ny -= this.speed;
+        break;
+      case 's':
+      case 'ArrowDown':
+        ny += this.speed;
+        break;
+      case 'a':
+      case 'ArrowLeft':
+        nx -= this.speed;
+        break;
+      case 'ArrowRight':
+      case 'd':
+        nx += this.speed;
+    }
+    // if (keys['w'] || keys['ArrowUp']) ny -= this.speed;
+    // if (keys['s'] || keys['ArrowDown']) ny += this.speed;
+    // if (keys['a'] || keys['ArrowLeft']) nx -= this.speed;
+    // if (keys['d'] || keys['ArrowRight']) nx += this.speed;
 
     if (!vtt.game.map.isTransparentAt(nx, ny)) {
       this.setPos(nx, ny)

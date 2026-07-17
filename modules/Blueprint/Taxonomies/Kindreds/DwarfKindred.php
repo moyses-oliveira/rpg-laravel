@@ -2,17 +2,18 @@
 
 namespace Modules\Blueprint\Taxonomies\Kindreds;
 
-use Modules\Blueprint\Framing\Entities\AdvancedEntityInterface;
-use Modules\Blueprint\Framing\Sets\CompositionSet;
+use Modules\Blueprint\Framing\Entities\AnimusEntityInterface;
+use Modules\Blueprint\Framing\Sets\Compositions\AbstractCompositionSet;
+use Modules\Blueprint\Skills\EvaluateMineralsSkill;
 
-class DwarfKindred extends CompositionSet
+class DwarfKindred extends AbstractCompositionSet
 {
 
-    public function modify(AdvancedEntityInterface $entity): void
+    public function modify(AnimusEntityInterface $entity): void
     {
-        $entity->atr()
-            ->modStrength(1)
-            ->modDexterity(-1);
+        $entity->animus()
+            ->modST(1)
+            ->modDX(-1);
         $entity->skills()->add(EvaluateMineralsSkill::ALIAS);
     }
 }
