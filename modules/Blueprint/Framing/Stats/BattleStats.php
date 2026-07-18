@@ -7,60 +7,47 @@ use Modules\Blueprint\Framing\Sets\ActiveEffectSet;
 
 class BattleStats
 {
-    private MutableStat $_aim;
-    private MutableStat $_range;
+    private TargetAttackStat $_targetAttack;
     private MutableStat $_armor;
-    private MutableStat $_dodge;
-    private MutableStat $_will;
     private MutableStat $_initiative;
     private ConsumableStat $_mp;
     private ConsumableStat $_hp;
-
-    /** @var ActiveEffectSet */
     private ActiveEffectSet $_activeEffects;
 
     public function __construct()
     {
-        $this->_aim = new MutableStat(0, 50);
-        $this->_range = new MutableStat(0, 10);
-        $this->_armor = new MutableStat(0, 50);
-        $this->_dodge = new MutableStat(0, 30);
-        $this->_will = new MutableStat(0, 100);
-        $this->_initiative = new MutableStat(0, 100);
-        $this->_mp = new ConsumableStat(0, 0);
-        $this->_hp = new ConsumableStat(0, 0);
+        $this->_targetAttack  = new TargetAttackStat(
+            new MutableStat(0, 100),
+            new MutableStat(0, 30),
+            new MutableStat(0, 100),
+            new MutableStat(0, 100),
+            new MutableStat(0, 100)
+        );
+        $this->_armor         = new MutableStat(0, 50);
+        $this->_initiative    = new MutableStat(0, 100);
+        $this->_mp            = new ConsumableStat(0, 0);
+        $this->_hp            = new ConsumableStat(0, 0);
         $this->_activeEffects = new ActiveEffectSet();
     }
 
-    public function getAim(): MutableStat
+    public function targetAttack(): TargetAttackStat
     {
-        return $this->_aim;
+        return $this->_targetAttack;
     }
 
-    public function getRange(): MutableStat
-    {
-        return $this->_range;
-    }
+    // --- Standalone stats ---
 
     public function getArmor(): MutableStat
     {
         return $this->_armor;
     }
 
-    public function getDodge(): MutableStat
-    {
-        return $this->_dodge;
-    }
-
-    public function getWill(): MutableStat
-    {
-        return $this->_will;
-    }
-
     public function initiative(): MutableStat
     {
         return $this->_initiative;
     }
+
+    // --- MP ---
 
     public function mp(): ConsumableStat
     {
@@ -82,6 +69,8 @@ class BattleStats
         $this->_mp->reset();
     }
 
+    // --- HP ---
+
     public function hp(): ConsumableStat
     {
         return $this->_hp;
@@ -102,6 +91,8 @@ class BattleStats
         $this->_hp->reset();
     }
 
+    // --- Active effects ---
+
     public function pushActiveEffect(AbstractActiveEffect $effect): void
     {
         $this->activeEffects()->add($effect);
@@ -121,10 +112,8 @@ class BattleStats
         }
     }
 
-    public function activeEffects():ActiveEffectSet
+    public function activeEffects(): ActiveEffectSet
     {
         return $this->_activeEffects;
     }
-
-
 }

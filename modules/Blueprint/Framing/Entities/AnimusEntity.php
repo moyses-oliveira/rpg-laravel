@@ -12,6 +12,7 @@ use Modules\Blueprint\Skills\Contracts\SkillInterface;
 
 class AnimusEntity implements AnimusEntityInterface, HardEntityInterface, InteractiveEntityInterface
 {
+    public string $name;
     protected AnimusStats $_animus;
     protected ConsumableStat $_hp;
     protected MasterySet $_masteries;

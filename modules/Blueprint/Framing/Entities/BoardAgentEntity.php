@@ -5,10 +5,13 @@ namespace Modules\Blueprint\Framing\Entities;
 use Modules\Blueprint\Framing\Stats\BattleStats;
 use Modules\Blueprint\Framing\Stats\InteractiveTokenStats;
 use Modules\Blueprint\Framing\Stats\PositionStats;
+use Modules\Blueprint\Framing\Stats\TargetAttackStat;
 use Modules\Blueprint\Skills\Contracts\SkillInterface;
+use Modules\Blueprint\Skills\Contracts\TargetAttackSkillInterface;
 
 abstract class BoardAgentEntity extends AnimusEntity implements BoardAgentInterface
 {
+    public string $name;
     private InteractiveTokenStats $_token;
     private PositionStats $_position;
     private BattleStats $_battle;
@@ -47,5 +50,27 @@ abstract class BoardAgentEntity extends AnimusEntity implements BoardAgentInterf
     public function getSkills(): array
     {
         return $this->_boardSkills;
+    }
+
+    public function prepareTargetAttack(BoardAgentInterface $target): TargetAttackStat
+    {
+        $a = $this->battle()->targetAttack();
+        $d = $target->battle()->targetAttack();
+
+        $context = TargetAttackStat::fromContext(
+            $a->aim(),
+            $a->range(),
+            $d->dodge(),
+            $d->will(),
+            $a->criticalHit()
+        );
+
+        foreach ($this->getSkills() as $skill) {
+            if ($skill instanceof TargetAttackSkillInterface) {
+                $skill->tune($context);
+            }
+        }
+
+        return $context;
     }
 }

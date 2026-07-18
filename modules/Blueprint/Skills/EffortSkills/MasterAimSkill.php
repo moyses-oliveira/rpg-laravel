@@ -2,17 +2,18 @@
 
 namespace Modules\Blueprint\Skills\EffortSkills;
 
-use Modules\Blueprint\Framing\Entities\BoardAgentInterface;
-use Modules\Blueprint\Framing\Stats\AnimusAttributeEnum;
-use Modules\Blueprint\Skills\AbstractEffortSkill;
+use Modules\Blueprint\Framing\Stats\TargetAttackStat;
+use Modules\Blueprint\Skills\AbstractTargetAttackSkill;
 
-class MasterAimSkill extends AbstractEffortSkill
+class MasterAimSkill extends AbstractTargetAttackSkill
 {
-    const ALIAS = 'MASTER_AIM';
-    const ATTRIBUTE = AnimusAttributeEnum::DX;
-
-    public function makeEffort(BoardAgentInterface $entity): void
+    public function tune(TargetAttackStat $stat): void
     {
-        $entity->battle()->getAim()->addMod(20);
+        $stat->addAim(20);
+    }
+
+    public function label(): string
+    {
+        return 'MASTER_AIM';
     }
 }

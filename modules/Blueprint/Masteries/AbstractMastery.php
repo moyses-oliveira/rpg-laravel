@@ -3,23 +3,23 @@
 namespace Modules\Blueprint\Masteries;
 
 use Modules\Blueprint\Framing\Entities\AnimusEntity;
-use Modules\Blueprint\Framing\Sets\Contracts\ProgressionSetInterface;
 
-class AbstractMastery
+abstract class AbstractMastery
 {
-    public function upgrade(AnimusEntity $entity)
+    protected int $level;
+
+    protected AnimusEntity $entity;
+
+    public function __construct(AnimusEntity $entity, int $level)
     {
-        $entity->addSkill();
+        $this->level = $level;
+        $this->entity = $entity;
     }
 
-    protected ?ProgressionSetInterface $progressionSet = null;
+    abstract public function apply():void;
 
-    public function progressionTrigger(int $level):void {
-        $this->progressionSet->apply($this, $level);
-    }
-
-    public function setProgressionSet(?ProgressionSetInterface $progressionSet): void
+    public static function upgrade(AnimusEntity $entity, int $level):void
     {
-        $this->progressionSet = $progressionSet;
+        (new static($entity, $level))->apply();
     }
 }
