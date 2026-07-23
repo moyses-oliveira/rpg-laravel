@@ -2,9 +2,10 @@
 
 namespace Modules\Blueprint\Enemies;
 
+use Modules\Blueprint\Equipment\Weapons\PlasmaWeapon;
 use Modules\Blueprint\Framing\Entities\BoardAgentEntity;
 use Modules\Blueprint\Framing\Stats\MutableStat;
-use Modules\Blueprint\Skills\AttackSkills\PlasmaPistolSkill;
+use Modules\Blueprint\Skills\AttackSkills\PistolShotSkill;
 
 class SectoidEnemyAgent extends BoardAgentEntity
 {
@@ -29,7 +30,8 @@ class SectoidEnemyAgent extends BoardAgentEntity
             new MutableStat(0, 100)
         );
 
-        $this->addSkill(new PlasmaPistolSkill());
+        $this->addSkill(new PistolShotSkill());
+        $this->equipWeapon(new PlasmaWeapon());
 
         $this->token()->setTokenKey('sectoid');
         $this->token()->setTintColor(0xFF0000);

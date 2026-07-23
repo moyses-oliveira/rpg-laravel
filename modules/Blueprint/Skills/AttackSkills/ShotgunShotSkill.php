@@ -4,15 +4,16 @@ namespace Modules\Blueprint\Skills\AttackSkills;
 
 use Modules\Blueprint\Framing\Stats\TargetAttackStat;
 
-class RifleShotSkill extends AbstractAttackSkill
+class ShotgunShotSkill extends AbstractAttackSkill
 {
     public function tune(TargetAttackStat $stat): void
     {
-        $stat->addAim(10);
+        $stat->addCriticalHit(25);
+        $stat->addAim(-15);
     }
 
     public function label(): string
     {
-        return 'RIFLE_SHOT';
+        return 'SHOTGUN_SHOT';
     }
 }

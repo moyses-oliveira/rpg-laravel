@@ -9,7 +9,7 @@ use Modules\Blueprint\Skills\AbstractSkill;
 
 abstract class AbstractAttackSkill extends AbstractSkill implements TunesTargetAttackInterface
 {
-    abstract public function damage(): int;
+    public function damage(): int { return 0; }
 
     public function tune(TargetAttackStat $stat): void {}
 

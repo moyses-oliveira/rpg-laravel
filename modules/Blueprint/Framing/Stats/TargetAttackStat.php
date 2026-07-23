@@ -12,6 +12,7 @@ class TargetAttackStat
     private MutableStat $_dodge;
     private MutableStat $_will;
     private MutableStat $_criticalHit;
+    private MutableStat $_damage;
 
     private ?TunesTargetAttackInterface $_selectedSkill  = null;
     private ?WeaponInterface            $_selectedWeapon = null;
@@ -19,6 +20,7 @@ class TargetAttackStat
     public function __construct(MutableStat $_aim, MutableStat $_range, MutableStat $_dodge, MutableStat $_will, MutableStat $_criticalHit)
     {
         $this->define($_aim, $_range, $_dodge, $_will, $_criticalHit);
+        $this->_damage = new MutableStat(0, 99);
     }
 
     public function define(MutableStat $_aim, MutableStat $_range, MutableStat $_dodge, MutableStat $_will, MutableStat $_criticalHit): void
@@ -56,12 +58,14 @@ class TargetAttackStat
     public function dodge(): int       { return $this->_dodge->current(); }
     public function will(): int        { return $this->_will->current(); }
     public function criticalHit(): int { return $this->_criticalHit->current(); }
+    public function damage(): int      { return $this->_damage->current(); }
 
     public function addAim(int $value): void         { $this->_aim->addMod($value); }
     public function addRange(int $value): void       { $this->_range->addMod($value); }
     public function addDodge(int $value): void       { $this->_dodge->addMod($value); }
     public function addWill(int $value): void        { $this->_will->addMod($value); }
     public function addCriticalHit(int $value): void { $this->_criticalHit->addMod($value); }
+    public function addDamage(int $value): void      { $this->_damage->addMod($value); }
 
     public function selectSkill(TunesTargetAttackInterface $skill): self
     {
@@ -72,6 +76,7 @@ class TargetAttackStat
     public function selectWeapon(WeaponInterface $weapon): self
     {
         $this->_selectedWeapon = $weapon;
+        $this->_damage->redefine($weapon->damage(), 99, 0);
         return $this;
     }
 
@@ -88,6 +93,7 @@ class TargetAttackStat
         $this->_dodge->resetMod();
         $this->_will->resetMod();
         $this->_criticalHit->resetMod();
+        $this->_damage->resetMod();
     }
 
     /**

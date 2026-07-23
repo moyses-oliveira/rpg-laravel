@@ -51,14 +51,18 @@ class BattleEngine
                 // 2. Select the active attack skill (chosen from frontend)
                 $context->selectSkill($skill);
 
-                // 3. Select weapon (future)
+                // 3. Select weapon — seeds base damage and applies weapon tuning
+                $weapon = $attacker->getWeapon();
+                if ($weapon !== null) {
+                    $context->selectWeapon($weapon);
+                }
 
                 // 4. Apply all selected tuning, then resolve
                 $context->applyTuning();
                 $outcome = $context->resolve();
 
                 if ($outcome->isHit()) {
-                    $dmg = $skill->damage();
+                    $dmg = $weapon !== null ? $context->damage() : $skill->damage();
 
                     if ($outcome->isCritical()) {
                         $dmg *= 2;

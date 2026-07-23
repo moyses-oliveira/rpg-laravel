@@ -2,6 +2,7 @@
 
 namespace Modules\Blueprint\Framing\Entities;
 
+use Modules\Blueprint\Equipment\WeaponInterface;
 use Modules\Blueprint\Framing\Stats\BattleStats;
 use Modules\Blueprint\Framing\Stats\InteractiveTokenStats;
 use Modules\Blueprint\Framing\Stats\PositionStats;
@@ -19,6 +20,10 @@ interface BoardAgentInterface extends AnimusEntityInterface, HardEntityInterface
     public function addSkill(SkillInterface $skill): void;
 
     public function getSkills(): array;
+
+    public function equipWeapon(WeaponInterface $weapon): void;
+
+    public function getWeapon(): ?WeaponInterface;
 
     public function prepareTargetAttack(BoardAgentInterface $target): TargetAttackStat;
 }

@@ -2,10 +2,11 @@
 
 namespace Modules\Blueprint\Agents;
 
+use Modules\Blueprint\Equipment\Weapons\SniperRifleWeapon;
 use Modules\Blueprint\Framing\Entities\BoardAgentEntity;
 use Modules\Blueprint\Framing\Stats\MutableStat;
 use Modules\Blueprint\Masteries\SniperMastery;
-use Modules\Blueprint\Skills\AttackSkills\RifleShotSkill;
+use Modules\Blueprint\Skills\AttackSkills\PrecisionShotSkill;
 
 class HumanSniperAgent extends BoardAgentEntity
 {
@@ -32,7 +33,8 @@ class HumanSniperAgent extends BoardAgentEntity
 
         SniperMastery::upgrade($this, 1);
 
-        $this->addSkill(new RifleShotSkill());
+        $this->addSkill(new PrecisionShotSkill());
+        $this->equipWeapon(new SniperRifleWeapon());
 
         $this->token()->setPlayerControlled(true);
         $this->token()->setTokenKey('sniper');

@@ -2,6 +2,7 @@
 
 namespace Modules\Blueprint\Framing\Entities;
 
+use Modules\Blueprint\Equipment\WeaponInterface;
 use Modules\Blueprint\Framing\Stats\BattleStats;
 use Modules\Blueprint\Framing\Stats\InteractiveTokenStats;
 use Modules\Blueprint\Framing\Stats\PositionStats;
@@ -18,6 +19,8 @@ abstract class BoardAgentEntity extends AnimusEntity implements BoardAgentInterf
 
     /** @var SkillInterface[] */
     private array $_boardSkills = [];
+
+    private ?WeaponInterface $_weapon = null;
 
     public function __construct()
     {
@@ -50,6 +53,16 @@ abstract class BoardAgentEntity extends AnimusEntity implements BoardAgentInterf
     public function getSkills(): array
     {
         return $this->_boardSkills;
+    }
+
+    public function equipWeapon(WeaponInterface $weapon): void
+    {
+        $this->_weapon = $weapon;
+    }
+
+    public function getWeapon(): ?WeaponInterface
+    {
+        return $this->_weapon;
     }
 
     public function prepareTargetAttack(BoardAgentInterface $target): TargetAttackStat
